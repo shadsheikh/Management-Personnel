@@ -1,0 +1,16 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  --main-color: #000;
+  --primary-color: #000;
+  --button-background: #000;
+  --primary-button-background:#000 ;
+  --background-color:#000;
+}
