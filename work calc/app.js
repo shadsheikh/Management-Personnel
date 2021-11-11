@@ -54,8 +54,8 @@ app.get("/", (req, res) => {
   res.render("index.hbs");
 });
 
-app.get("/file", (req, res) => {
-  res.render("file.hbs");
+app.get("/login", (req, res) => {
+  res.render("login.hbs");
 });
 app.post("/path", async (req, res) => {
   try {
