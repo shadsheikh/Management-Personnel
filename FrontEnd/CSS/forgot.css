@@ -142,7 +142,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text],input[type=number],input[type=email] {
+input[type=text] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -163,12 +163,12 @@ input[type=text],input[type=number],input[type=email] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus,input[type=email]:focus,input[type=number]:focus {
+input[type=text]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder,input[type=email]:placeholder,input[type=number]:placeholder {
+input[type=text]:placeholder {
   color: #cccccc;
 }
 
@@ -275,10 +275,7 @@ input[type=text]:placeholder,input[type=email]:placeholder,input[type=number]:pl
 .underlineHover:hover:after{
   width: 100%;
 }
-.contain{
-  font-size: 0.8rem;
-  color: #A4A6B3;
-}
+
 
 
 /* OTHERS */

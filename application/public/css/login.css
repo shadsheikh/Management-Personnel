@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
+/* BASIC */
+
 html {
   background-color:#363740;
 }
@@ -144,7 +142,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text],input[type=number],input[type=email] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -165,12 +163,12 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus,input[type=email]:focus,input[type=number]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type=text]:placeholder,input[type=email]:placeholder,input[type=number]:placeholder {
   color: #cccccc;
 }
 
@@ -277,7 +275,10 @@ input[type=text]:placeholder {
 .underlineHover:hover:after{
   width: 100%;
 }
-
+.contain{
+  font-size: 0.8rem;
+  color: #A4A6B3;
+}
 
 
 /* OTHERS */
