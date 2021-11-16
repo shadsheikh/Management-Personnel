@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const hbs = require("hbs");
 const { registerPartials } = require("hbs");
 require("./src/db/conn");
-const User = require("./src/models/userSchema");
+
 const app = express();
 
 const port = process.env.Port || 5000;
@@ -54,20 +54,7 @@ app.get("/", (req, res) => {
   res.render("index.hbs");
 });
 
-app.get("/login", (req, res) => {
-  res.render("login.hbs");
-});
-app.post("/path", async (req, res) => {
-  try {
-    // res.send(req.body);
-    const userData = new User(req.body);
-    await userData.save();
-    res.status(201).render("index.hbs");
-  } catch (error) {
-    res.status(501).send(error);
-  }
-});
 
 app.listen(port, () => {
-  console.log(`the application started successfully on port ${port}`);
+  console.log(`the Application started successfully on port ${port} and on http://localhost:${port}`);
 });
