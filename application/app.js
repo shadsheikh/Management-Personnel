@@ -14,6 +14,7 @@ const port = process.env.Port || 5000;
 const staticpath = path.join(__dirname, "./public");
 const templatepath = path.join(__dirname, "./templates/views");
 const partialpath = path.join(__dirname, "./templates/partials");
+const Layoutpath = path.join(__dirname, "./templates/Layouts");
 dotenv.config({ path: "./config.env" });
 //middleware
 //middleware
@@ -47,14 +48,14 @@ app.use(express.static(staticpath));
 app.set("view engine", "hbs");
 app.set("views", templatepath);
 hbs.registerPartials(partialpath);
-
+hbs.registerPartials(Layoutpath);
+app.use(express.json());
+app.use(require("./routes/post.routes"));
 //routing
 //app.get(path,callback)
-app.get("/", (req, res) => {
-  res.render("index.hbs");
-});
-
 
 app.listen(port, () => {
-  console.log(`the Application started successfully on port ${port} and on http://localhost:${port}`);
+  console.log(
+    `the Application started successfully on port ${port} and on http://localhost:${port}`
+  );
 });
