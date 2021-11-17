@@ -13,8 +13,11 @@ router.get("/", (req, res) => {
   router.get("/signup", (req, res) => {
     res.render("signup.hbs");
   });
-  router.get("/user/reset", (req, res) => {
+  router.get("/user/forgot", (req, res) => {
     res.render("forgot.hbs");
+  });
+  router.get("/user/reset", (req, res) => {
+    res.render("setnewpassword.hbs");
   });
 
 
