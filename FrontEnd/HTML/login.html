@@ -10,25 +10,33 @@
 <body>
   <div class="wrapper fadeInDown">
     <div id="formContent">
-      <!-- Tabs Titles -->
-      <h2 class="active"> Sign In </h2>
-  
       <!-- Icon -->
       <div class="fadeIn first">
-        <img src="../../Asset/logo.png" id="icon" alt="logo"/>
-        <h3 class="LogoName">Management Personnel</h3>
+
+        <img src="/Asset/logo.png" id="icon" alt="logo"/>
+        <br>
+        <h2 class="LogoName">Management Personnel</h2>
+
+      <!-- Tabs Titles -->
+      <h3 class="active"> Log In </h3>
+      <h4 class="EnterValues">Enter your email and password below</h4>
     </div>
   
       <!-- Login Form -->
       <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <label for="email address"><b>EMAIL</b></label>
+        <br>
+        <input type="text" id="email address" class="fadeIn second" name="email address" placeholder="email address">
+        <label for="psw"><b>Password</b></label>
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" >
+        <i class="far fa-eye" id="togglePassword"></i>
         <input type="submit" class="fadeIn fourth" value="Log In">
+      
       </form>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
+        <a>Don't have an account?<a class="signup" href="/Management_Personnel/FrontEnd/HTML/signup.html">Sign Up</a></a>
       </div>
   
     </div>

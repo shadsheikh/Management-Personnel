@@ -27,6 +27,21 @@ h2 {
   margin: 40px 8px 10px 8px; 
   color: #cccccc;
 }
+h4 {
+
+  
+height: 20px;
+left: 32px;
+right: 32px;
+top: 198px;
+font-family: mulish;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+text-align: center;
+letter-spacing: 0.3px;
+color: #9FA2B4;
+}
 
 
 
@@ -54,6 +69,25 @@ h2 {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
+}
+label {
+height: 16px;
+top: 0px;
+text-align: right;
+
+
+font-family: Mulish;
+
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 15px;
+letter-spacing: 0.3px;
+text-transform: uppercase;
+
+/* grayscale / gray */
+
+color: #9FA2B4;
 }
 
 #formFooter {
@@ -104,6 +138,47 @@ opacity: 0.7;
 margin: 0;
 }
 
+h5.email {
+  height: 16px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  text-align: left;
+  padding-left: 2
+}
+
+a.signup {
+height: 20px;
+left: 0px;
+right: 0px;
+top: calc(50% - 20px/2);
+
+font-family: Mulish;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+
+
+text-align: center;
+letter-spacing: 0.2px;
+
+/* accent / default */
+
+color: #3751FF;
+}
+
+i.farfa-eye {
+left: 8.33%;
+right: 8.33%;
+top: 16.67%;
+bottom: 16.67%;
+
+/* grayscale / gray */
+
+background: #9FA2B4;
+}
+
 
 
 /* FORM TYPOGRAPHY*/
@@ -130,6 +205,7 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
+
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #39ace7;
 }
@@ -147,7 +223,7 @@ input[type=text],input[type=number],input[type=email] {
   border: none;
   color: #0d0d0d;
   padding: 15px 32px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
@@ -288,10 +364,12 @@ input[type=text]:placeholder,input[type=email]:placeholder,input[type=number]:pl
 } 
 
 #icon {
-    width: 66px;
-    height: 66px;
-    left: 687px;
-    top: 161px;
+  
+  width: 66px;
+  height: 66px;
+  left: 687px;
+  top: 161px;
+  margin: 0;
 }
 
 * {
