@@ -2,8 +2,8 @@ require("../src/db/conn");
 const authenticate = require("../middleware/authenticate");
 const User = require("../src/models/userSchema");
 exports.signup = async (req, res) => {
-  const { name, email, phone, password, cpassword } = req.body;
-  if (!name || !email || !phone || !password || !cpassword) {
+  const { Fname,Lname, email, phone, password, cpassword,role,id,dept } = req.body;
+  if (!Fname||!Lname || !email || !phone || !password || !cpassword || !role||!id||!dept) {
     return res.status(422).json({ error: "data is not inserted" });
   }
   try {
@@ -15,7 +15,7 @@ exports.signup = async (req, res) => {
       console.log("password function working");
       return res.status(422).json({ error: "recheck password" });
     } else {
-      const user = new User({ name, email, phone, password, cpassword });
+      const user = new User({ Fname,Lname, email, phone, password, cpassword,role,id ,dept});
       // const userRegister = await user.save();
       // =============================hasing =============================
       await user.save();

@@ -4,16 +4,16 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const userSchema = new mongoose.Schema({
-    name: {
+    Fname: {
+        type: String,
+        required: true,
+    },
+    Lname: {
         type: String,
         required: true,
     },
     email: {
         type: String,
-        required: true,
-    },
-    phone: {
-        type: Number,
         required: true,
     },
     password: {
@@ -24,7 +24,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-
+    role:{
+    type:String,
+    required:true,
+    },
+    id:{
+     type:String,
+    required:true,
+    },
+    dept:{
+    type:String,
+    required:true,
+    },
+    phone: {
+        type: Number,
+        required: true,
+     },
     date: {
         type: Date,
         default: Date.now,
@@ -53,6 +68,6 @@ userSchema.methods.generateAuthToken = async function() {
     }
 };
 //====================================collection creation ===============================
-const User = mongoose.model("register", userSchema);
+const User = mongoose.model("student", userSchema);
 
 module.exports = User;
