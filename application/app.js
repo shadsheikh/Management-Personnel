@@ -30,6 +30,7 @@ hbs.registerPartials(Layoutpath);
 //===========================expresss=================================
 app.use(express.json());
 //======= Routes ===========================
+app.use(require("./routes/get.routes"));
 app.use(require("./routes/post.routes"));
 //==========================ERROR HANDLING===========
 // Handling Errors
