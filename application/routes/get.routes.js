@@ -1,27 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const {getUser} = require('../controllers/getUserController');
+const authenticate = require("../middleware/authenticate");
 
 
 router.get("/", (req, res) => {
  res.render("index.hbs");
   });
-  router.get("/login", (req, res) => {
-    res.render("login.hbs");
-  });
-  router.get("/signup", (req, res) => {
-    res.render("signup.hbs");
-  });
-  router.get("/user/forgot", (req, res) => {
-    res.render("forgot.hbs");
-  });
-  router.get("/user/reset", (req, res) => {
-    res.render("setnewpassword.hbs");
-  });
+ 
+  router.get("/about", authenticate, (req, res) => {
+    console.log("hello i am about");
+    res.send(req.UserRoot);
+});
 
 
 
-//===================== middleware ========================
-router.get('/getuser',getUser);
+
 
   module.exports =router;
