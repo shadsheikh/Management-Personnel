@@ -31,8 +31,16 @@ hbs.registerPartials(Layoutpath);
 app.use(express.json());
 //======= Routes ===========================
 app.use(require("./routes/post.routes"));
-
-
+//==========================ERROR HANDLING===========
+// Handling Errors
+app.use((err, req, res, next) => {
+  // console.log(err);
+  err.statusCode = err.statusCode || 500;
+  err.message = err.message || "Internal Server Error";
+  res.status(err.statusCode).json({
+    message: err.message,
+  });
+});
 //===============================================PORT  LISTENING ========================================
 app.listen(port, () => {
   console.log(
