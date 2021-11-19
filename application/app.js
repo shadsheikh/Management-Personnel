@@ -15,7 +15,7 @@ const port = process.env.Port || 5000;
 const staticpath = path.join(__dirname, "./public");
 const templatepath = path.join(__dirname, "./templates/views");
 const partialpath = path.join(__dirname, "./templates/partials");
-const Layoutpath = path.join(__dirname, "./templates/Layouts");
+const helperpath = path.join(__dirname, "./templates/helpers");
 //=========config files ==================
 dotenv.config({ path: "./config.env" });
 //==========================app paths =======================
@@ -26,14 +26,13 @@ app.use(express.static(staticpath));
 app.set("view engine", "hbs");
 app.set("views", templatepath);
 hbs.registerPartials(partialpath);
-hbs.registerPartials(Layoutpath);
+hbs.registerPartials(helperpath);
 //===========================expresss=================================
 app.use(express.json());
 //======= Routes ===========================
 app.use(require("./routes/get.routes"));
 app.use(require("./routes/post.routes"));
-//==========================ERROR HANDLING===========
-// Handling Errors
+//==========================ERROR HANDLING=============
 app.use((err, req, res, next) => {
   // console.log(err);
   err.statusCode = err.statusCode || 500;
@@ -48,7 +47,6 @@ app.listen(port, () => {
     `the Application started successfully on port ${port} and on http://localhost:${port}`
   );
 });
-
 
 //===========================================extras=======================================================
 
