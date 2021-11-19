@@ -21,6 +21,13 @@ router.get("/", (req, res) => {
           res.render("auth-register");
            });
 
+           router.get("/profile", (req, res) => {
+            res.render("features-profile");
+             });
+
+             router.get("/syllabustrack", (req, res) => {
+              res.render("SyllabusTrack");
+               });
  
   router.get("/about", authenticate, (req, res) => {
     console.log("hello i am about");
