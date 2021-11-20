@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const authenticate = require("../middleware/authenticate");
 
-router.get("/", (req, res) => {
+router.get("/index", (req, res) => {
   res.render("index.hbs", {
     title: "index",
   });
@@ -15,7 +15,7 @@ router.get("/auth-forgot-password", (req, res) => {
   res.render("auth-forgot-password");
 });
 
-router.get("/login", (req, res) => {
+router.get("/", (req, res) => {
   res.render("auth-login");
 });
 router.get("/signup", (req, res) => {
@@ -31,7 +31,7 @@ router.get("/syllabustrack", (req, res) => {
 });
 
 router.get("/calender", (req, res) => {
-  res.render("calender");
+  res.render("calender.hbs");
 });
 
 

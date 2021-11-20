@@ -2,8 +2,19 @@ require("../src/db/conn");
 const authenticate = require("../middleware/authenticate");
 const User = require("../src/models/userSchema");
 exports.signup = async (req, res) => {
-  const { Fname,Lname, email, phone, password, cpassword,role,id,dept } = req.body;
-  if (!Fname||!Lname || !email || !phone || !password || !cpassword || !role||!id||!dept) {
+  const { Fname, Lname, email, phone, password, cpassword, role, id, dept } =
+    req.body;
+  if (
+    !Fname ||
+    !Lname ||
+    !email ||
+    !phone ||
+    !password ||
+    !cpassword ||
+    !role ||
+    !id ||
+    !dept
+  ) {
     return res.status(422).json({ error: "data is not inserted" });
   }
   try {
@@ -15,13 +26,23 @@ exports.signup = async (req, res) => {
       console.log("password function working");
       return res.status(422).json({ error: "recheck password" });
     } else {
-      const user = new User({ Fname,Lname, email, phone, password, cpassword,role,id ,dept});
+      const user = new User({
+        Fname,
+        Lname,
+        email,
+        phone,
+        password,
+        cpassword,
+        role,
+        id,
+        dept,
+      });
       // const userRegister = await user.save();
       // =============================hasing =============================
       await user.save();
-      console.log("working fine");
-      res.status(200).render("login.pug");
-      res.status(201).json({ message: "successfully saved." });
+
+      res.status(200).render("auth-login.hbs");
+      // res.status(201).json({ message: "successfully saved." });
       //  if(userRegister){
       //   res.status(201).json({ message: "successfully saved." });
       //  }
