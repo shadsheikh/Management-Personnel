@@ -20,7 +20,7 @@ router.post(
 );
 
 router.post(
-    "/login", [
+    "/", [
         body("email", "Invalid email address").notEmpty().escape().trim().isEmail(),
         body("password", "The Password must be of minimum 4 characters length")
         .notEmpty()

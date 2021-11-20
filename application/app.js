@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const hbs = require("hbs");
 const { registerPartials } = require("hbs");
+const cookieParser = require("cookie-parser");
 require("./src/db/conn");
 //=============laod appplication ============
 const app = express();
@@ -29,6 +30,7 @@ hbs.registerPartials(partialpath);
 hbs.registerPartials(helperpath);
 //===========================expresss=================================
 app.use(express.json());
+app.use(cookieParser());
 //======= Routes ===========================
 app.use(require("./routes/get.routes"));
 app.use(require("./routes/post.routes"));
