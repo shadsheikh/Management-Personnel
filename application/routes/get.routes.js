@@ -30,6 +30,11 @@ router.get("/syllabustrack", (req, res) => {
   res.render("SyllabusTrack");
 });
 
+router.get("/calender", (req, res) => {
+  res.render("calender");
+});
+
+
 router.get("/about", authenticate, (req, res) => {
   console.log("hello i am about");
   res.send(req.UserRoot);
