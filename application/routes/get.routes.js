@@ -8,7 +8,9 @@ router.get("/", (req, res) => {
   });
 });
 router.get("/attendance", (req, res) => {
-  res.render("attendance.hbs");
+  res.render("attendance.hbs",{
+    title:"attendance"
+  });
 });
 
 router.get("/auth-forgot-password", (req, res) => {
@@ -31,7 +33,9 @@ router.get("/syllabustrack", (req, res) => {
 });
 
 router.get("/calender", (req, res) => {
-  res.render("calender");
+  res.render("calender",{
+    title:"calender"
+  });
 });
 
 
