@@ -33,13 +33,10 @@ router.get("/syllabustrack", (req, res) => {
 });
 
 router.get("/calender", (req, res) => {
-<<<<<<< HEAD
-  res.render("calender.hbs");
-=======
   res.render("calender",{
     title:"calender"
   });
->>>>>>> 9c4f510acca758b40eb2fff9ddaaf75acb1507ee
+
 });
 
 
