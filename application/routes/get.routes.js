@@ -6,11 +6,11 @@ const authenticate = require("../middleware/authenticate");
 router.get("/", (req, res) => {
  res.render("index.hbs");
   });
-  router.get("/:id/attendance", (req, res) => {
-    res.render("attendance");
+  router.get("/attendance", (req, res) => {
+    res.render("attendance.hbs");
      });
 
-     router.get("/:id/auth-forgot-password", (req, res) => {
+     router.get("/auth-forgot-password", (req, res) => {
       res.render("auth-forgot-password");
        });
 

@@ -20,6 +20,7 @@ exports.signup = async (req, res) => {
       // =============================hasing =============================
       await user.save();
       console.log("working fine");
+      res.status(200).render("login.pug");
       res.status(201).json({ message: "successfully saved." });
       //  if(userRegister){
       //   res.status(201).json({ message: "successfully saved." });

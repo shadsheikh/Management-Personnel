@@ -30,7 +30,8 @@ exports.login = async (req, res) => {
           expires: new Date(Date.now() + 2589200000),
           httpOnly: true,
         });
-        res.json({ message: "successfully login" });
+        // res.json({ message: "successfully login" });
+        res.status(200).render("index.hbs");
       }
     } else {
       res.status(400).json({ error: "invaild data details" });
