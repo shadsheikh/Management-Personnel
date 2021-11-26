@@ -4,6 +4,7 @@ const { body } = require("express-validator");
 const authenticate = require("../middleware/authenticate");
 const { signup } = require("../controllers/registerController");
 const { login } = require("../controllers/loginController");
+const { feedback } = require("../controllers/feedbackController");
 router.post(
     "/signup", [
         body("email", "Invalid email address").notEmpty().escape().trim().isEmail(),
@@ -31,7 +32,7 @@ router.post(
 );
 
 
-
+router.post("/feedback", authenticate, feedback);
 
 
 

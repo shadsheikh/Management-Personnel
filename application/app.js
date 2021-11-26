@@ -1,6 +1,7 @@
 //================module imports ============================
 const express = require("express");
 const path = require("path");
+const fs = require('fs')
 var bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const hbs = require("hbs");

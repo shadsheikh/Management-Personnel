@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const path = require("path");
 const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
@@ -8,16 +9,16 @@ const User = require("../src/models/userSchema");
 exports.login = async (req, res) => {
   let token;
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
     if (!email || !password) {
       return res.status(400).json({ error: "please fill data" });
     }
-    const userlogin = await User.findOne({ email: email });
-    // console.log(userlogin);
+    const userlogin = await User.findOne({ email: email});
+    console.log(userlogin);
 
     if (userlogin) {
       const isMatch = await bcrypt.compare(password, userlogin.password);
-
+      
       // =====================================  token ============================
 
       if (!isMatch) {
@@ -30,8 +31,11 @@ exports.login = async (req, res) => {
           expires: new Date(Date.now() + 2589200000),
           httpOnly: true,
         });
-        // res.json({ message: "successfully login" });
-        res.status(200).render("index.hbs");
+      if(role === "Student"){
+        res.status(200).render("indexstudent.hbs");
+       }else
+         res.status(200).render("index.hbs");
+       
       }
     } else {
       res.status(400).json({ error: "invaild data details" });

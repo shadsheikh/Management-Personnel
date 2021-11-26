@@ -44,7 +44,7 @@ function showNotes() {
                       <tbody>                         
                         <tr>
                           <td>
-                          Notes ${index+1}
+                          <input type="text" id="currentDateTime">
                           </td>
                           <td>
                             <a href="#" class="font-weight-600"><img src="img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1">  ${element} </a>
@@ -89,7 +89,7 @@ search.addEventListener("input", function () {
   console.log("fired input event", inputVal);
   let noteCards = document.getElementsByClassName("notecard");
   Array.from(noteCards).forEach(function (element) {
-    let cardTxt = element.getElementsByTagName("p")[0].innerText;
+    let cardTxt = element.getElementsByTagName("textarea")[0].innerText;
     // console.log(cardTxt);
     if (cardTxt.includes(inputVal)) {
       element.style.display = "block";
@@ -98,3 +98,11 @@ search.addEventListener("input", function () {
     }
   });
 });
+
+//=====date and time ======
+const today = new Date();
+const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+const dateTime = date+' '+time;
+document.getElementById("currentDateTime").value = dateTime;
+
